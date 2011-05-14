@@ -1,0 +1,43 @@
+body {
+    font-family: verdana,sans-serif;
+    background-color: white; /* #D8E8EE;*/
+    width: 700px;
+    margin: 20 auto;
+}
+
+#feedback {
+    background-color: #C0FAF1;
+    position: fixed;
+    bottom: 0;    
+    right: 0;
+    font-size: 80%;
+    cursor: pointer;
+}
+
+#mainleft {
+    width: 500px; 
+    float: left;
+}
+
+#loopbutton {
+    height: 430px;
+    width: 150px;
+    float: left;
+    font-size: 200%;
+    cursor: pointer;
+}
+
+#vidbox {
+    width: 310px;
+}
+
+#lyricsbox {
+    width: 450px;
+    height: 200px;
+}
+
+#copyurlbox {
+    width: 400px;
+    height: 50px;
+    font-size: 80%;
+}
