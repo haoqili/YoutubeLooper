@@ -31,7 +31,7 @@
 -->
 
 <?php
-   include_once("sqlstuff/sqlconnect.php");
+   include_once("sqlstuff/sqlConnect.php");
    session_start();
    #print "\ndebugging: session variable input_string is " . $_SESSION["input_string"]."<br>\n";
 
@@ -99,15 +99,6 @@
    $inputLyrics = htmlentities($_REQUEST["mylyrics"]); //htmlentities to prevent xss
    $_SESSION["input_lyrics"] = urlencode($inputLyrics);
 
-   /*
-   // TODO: Save into database:
-   //create string id
-   $strid = chr(96 + rand(1,26)).chr(96 + rand(1,26)).chr(96 + rand(1,26)).chr(96 + rand(1,26)); 
-   // TODO: check if it's already present
-   
-   $sql = "insert into table1 set strid='" . $strid . "', vidid='" . $youtubeID . "', xdim='" . $axisX . "', ydim='" . $axisY . "'";
-   $result = mysql_query($sql) or die ('ERROR inserting new entry into youtube looper database table.');
-   */
    //######################################################
    // Header 
    print "<H1>Youtube Video Looper</H1>\n";
@@ -170,6 +161,13 @@
 
   //######################################################
   // The Video Page
+   // TODO: Save into database:
+   //create string id
+   $strid = chr(96 + rand(1,26)).chr(96 + rand(1,26)).chr(96 + rand(1,26)).chr(96 + rand(1,26)); 
+   // TODO: check if it's already present
+   
+   $sql = "insert into table1 set strid='" . $strid . "', vidid='" . $youTubeID . "', xdim='" . $axisX . "', ydim='" . $axisY . "'";
+   $result = mysql_query($sql) or die ('ERROR inserting new entry into youtube looper database table.');
    
       //-----Start the Looping Part-------
       print '<object><embed src="http://www.youtube.com/v/';
