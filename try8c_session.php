@@ -31,10 +31,13 @@
 -->
 
 <?php
+   include_once("sqlstuff/sqlconnect.php");
    session_start();
    #print "\ndebugging: session variable input_string is " . $_SESSION["input_string"]."<br>\n";
 
    if (isset($_SESSION["input_string"])){
+       // the purpose of these things is to fill out the inputs if it's in session
+
        #print "IS IN SESSION!<br>\n";
        #print "<br><br>";
 
@@ -96,6 +99,15 @@
    $inputLyrics = htmlentities($_REQUEST["mylyrics"]); //htmlentities to prevent xss
    $_SESSION["input_lyrics"] = urlencode($inputLyrics);
 
+   /*
+   // TODO: Save into database:
+   //create string id
+   $strid = chr(96 + rand(1,26)).chr(96 + rand(1,26)).chr(96 + rand(1,26)).chr(96 + rand(1,26)); 
+   // TODO: check if it's already present
+   
+   $sql = "insert into table1 set strid='" . $strid . "', vidid='" . $youtubeID . "', xdim='" . $axisX . "', ydim='" . $axisY . "'";
+   $result = mysql_query($sql) or die ('ERROR inserting new entry into youtube looper database table.');
+   */
    //######################################################
    // Header 
    print "<H1>Youtube Video Looper</H1>\n";
